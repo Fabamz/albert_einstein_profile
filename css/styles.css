@@ -1,0 +1,278 @@
+:root {
+  --main-radius: 5px;
+  --primary-blue: #1f3a93;
+  --accent-gold: #f5b041;
+  --light-gray: #f4f4f4;
+  --charcoal-gray: #2c3e50;
+  --highlight-red: #c0392b;
+  --grey: #f0f0f0;
+  --white: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--light-gray);
+  color: var(--charcoal-gray);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+  padding: 20px;
+  grid-template-areas:
+    "header header header header header header header header header header header header"
+    "about about about about about about about about about about about about"
+    "publications publications publications publications publications publications publications publications publications publications publications publications"
+    "hobbies hobbies hobbies hobbies hobbies hobbies hobbies hobbies hobbies hobbies hobbies hobbies"
+    "images images images images images images images images images images images images"
+    "blog blog blog blog blog blog blog blog blog blog blog blog"
+    "footer footer footer footer footer footer footer footer footer footer footer footer";
+}
+
+header {
+  grid-area: header;
+  background-color: var(--primary-blue);
+  color: var(--white);
+  padding: 20px;
+  text-align: center;
+  border-radius: var(--main-radius);
+}
+
+header h3 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+.nav-element {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+  padding: 0;
+}
+
+.nav-element li a {
+  text-decoration: none;
+  color: var(--white);
+  padding: 10px 15px;
+  font-weight: bold;
+  border-radius: var(--main-radius);
+  transition: background-color 0.3s;
+}
+
+.nav-element li a:hover {
+  background-color: var(--accent-gold);
+  color: var(--primary-blue);
+}
+
+.nav-element li a:visited {
+  color: var(--highlight-red);
+}
+
+.about-container {
+  grid-area: about;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  padding: 20px;
+  background-color: var(--white);
+  border-radius: var(--main-radius);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#profile-image img {
+  width: 100%;
+  border-radius: var(--main-radius);
+  margin-top: 35px;
+}
+
+#about {
+  padding: 0 20px;
+}
+
+#about h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: var(--primary-blue);
+}
+
+#about p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.publications {
+  grid-area: publications;
+  padding: 20px;
+  background-color: var(--white);
+  border-radius: var(--main-radius);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#pub-header {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--primary-blue);
+}
+
+.publications-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+}
+
+.pub img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: var(--main-radius);
+  border: 2px solid black;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.caption {
+  text-align: center;
+  font-size: 1.1em;
+  margin-top: 10px;
+}
+
+.hobbies {
+  grid-area: hobbies;
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: var(--main-radius);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.hobbies h3 {
+  color: var(--primary-blue);
+  margin-bottom: 20px;
+}
+
+.list-hobbies {
+  list-style: none;
+  padding: 0;
+}
+
+.list-hobbies li {
+  margin-bottom: 15px;
+  font-size: 1.1em;
+  margin-right: 15px;
+}
+
+.collections {
+  grid-area: images;
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: var(--main-radius);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.collections h3 {
+  color: var(--primary-blue);
+  text-align: center;
+  margin-bottom: 10px;
+}
+.image-collections-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.image-collection img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: var(--main-radius);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.blog {
+  grid-area: blog;
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: var(--main-radius);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blog-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.blog h3 {
+  color: var(--primary-blue);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.blog-post {
+  background-color: var(--grey);
+  padding: 15px;
+  border-radius: var(--main-radius);
+}
+
+.blog-post h4 {
+  margin-bottom: 10px;
+  color: var(--primary-blue);
+}
+
+footer {
+  grid-area: footer;
+  background-color: var(--primary-blue);
+  color: var(--white);
+  text-align: center;
+  padding: 20px;
+}
+
+footer a {
+  color: var(--accent-gold);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: white;
+}
+
+/* Responsive adjustments for Albert's i-phone */
+@media (max-width: 500px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+
+  /* Stack images in one column on mobile */
+  .publications-container,
+  .image-collections-container {
+    grid-template-columns: 1fr;
+  }
+
+  /* Make text slightly larger for readability */
+  body {
+    font-size: 1.2rem;
+  }
+
+  /* Navigation */
+  nav {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-element li {
+    margin-bottom: 10px;
+  }
+}
